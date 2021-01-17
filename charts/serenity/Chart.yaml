@@ -1,5 +1,5 @@
 apiVersion: v2
-name: hfx-serenity
+name: serenity
 description: API layer for the HFX stack
 
 # A chart can be either an 'application' or a 'library' chart.
