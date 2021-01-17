@@ -1,0 +1,47 @@
+apiVersion: v1
+entries:
+  hfx-infinity:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-01-17T14:24:03.281328-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 3aea169a79dea60031442ae1e98d572056aea43944180ccab2a70ce4e8e8652b
+    name: hfx-infinity
+    type: application
+    urls:
+    - https://hatfieldfx.github.io/Charts/hfx-infinity-0.1.0.tgz
+    version: 0.1.0
+  hfx-serenity:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-01-17T14:24:03.281515-05:00"
+    description: API layer for the HFX stack
+    digest: bb94c029a3e67c18d7a18f5898ee13d70e3cb44d585d3135ce596aefa19ee16c
+    name: hfx-serenity
+    type: application
+    urls:
+    - https://hatfieldfx.github.io/Charts/hfx-serenity-0.1.0.tgz
+    version: 0.1.0
+  hfx-tranquility:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-01-17T14:24:03.281998-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 06414f21d7a5b00b480e286575b5b7a6d5adec0a84c269f348c918f47b93acbf
+    name: hfx-tranquility
+    type: application
+    urls:
+    - https://hatfieldfx.github.io/Charts/hfx-tranquility-0.1.0.tgz
+    version: 0.1.0
+  hfx-workstation:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-01-17T14:24:03.282425-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 60eaae1c77359e19a6a50f70d9d2f6451af7eb1dea765e278f4f6f308da73579
+    name: hfx-workstation
+    type: application
+    urls:
+    - https://hatfieldfx.github.io/Charts/hfx-workstation-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-01-17T14:24:03.280664-05:00"
