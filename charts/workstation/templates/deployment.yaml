@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+
+    spec:
+      containers:
+      - name: {{ .Release.Name }}
+        image: dorowu/ubuntu-desktop-lxde-vnc
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: BUGGY
+            value: {{ .Release.Name }}
+
+        volumeMounts:
+          - mountPath: /dev/shm
+            name: shm
+
+      - name: {{ .Release.Name }}-buggy
+        image: hatfieldfx/buggy
+        env:
+          - name: BUGGY
+            value: {{ .Release.Name }}
+          - name: REG
+            value: {{ .Values.repo }}
+          - name: USR
+            value: {{ .Values.username }}
+          - name: PAS
+            value: {{ .Values.password }}
+
+        volumeMounts:
+          - mountPath: /var/run/docker.sock
+            name: sock
+
+      volumes:
+        - name: shm
+          hostPath:
+            path: /dev/shm
+        - name: sock
+          hostPath:
+            path: /var/run/docker.sock
