@@ -13,38 +13,74 @@ spec:
         app: {{ .Release.Name }}
 
     spec:
+      hostname: {{ .Release.Name }}
+
       containers:
-      - name: {{ .Release.Name }}
-        image: dorowu/ubuntu-desktop-lxde-vnc
+      - name: polaris
+        image: {{ .Values.polaris.image }}:{{ .Values.polaris.tag }}
         imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 5901
+            name: polaris
         env:
-          - name: BUGGY
-            value: {{ .Release.Name }}
-
-        volumeMounts:
-          - mountPath: /dev/shm
-            name: shm
-
-      - name: {{ .Release.Name }}-buggy
-        image: hatfieldfx/buggy
-        env:
-          - name: BUGGY
-            value: {{ .Release.Name }}
-          - name: REG
-            value: {{ .Values.repo }}
           - name: USR
-            value: {{ .Values.username }}
+            value: {{ .Values.polaris.user }}
+          - name: RES
+            value: 1920x1080
           - name: PAS
-            value: {{ .Values.password }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}
+                key: desktop-token
+          - name: LUNA
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Release.Name }}
+                key: luna-token
 
+      - name: luna
+        image: junofx/luna:0.1.0
+        ports:
+          - containerPort: 3030
+            name: luna
+        env:
+          - name: USR
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}
+                key: docker-user
+          - name: PAS
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}
+                key: docker-pass
+          - name: REG
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Release.Name }}
+                key: docker-registry
+          - name: BUDDY
+            valueFrom:
+              configMapKeyRef:
+                name: {{ .Release.Name }}
+                key: luna-token
         volumeMounts:
-          - mountPath: /var/run/docker.sock
-            name: sock
+          - name: dockersock
+            mountPath: "/var/run/docker.sock"
+
+      - name: novnc
+        image: dougw/novnc
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8081
+            name: vnc
+        env:
+          - name: REMOTE_PORT
+            value: "5901"
+          - name: REMOTE_HOST
+            value: localhost
 
       volumes:
-        - name: shm
-          hostPath:
-            path: /dev/shm
-        - name: sock
+        - name: dockersock
           hostPath:
             path: /var/run/docker.sock

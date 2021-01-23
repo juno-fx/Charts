@@ -1,3 +1,11 @@
-username:
-password:
-repo:
+# luna configuration
+luna:
+  reg:
+  user:
+  pass:
+
+# polaris configuration
+polaris:
+  user:
+  image: junofx/polaris
+  tag: latest
