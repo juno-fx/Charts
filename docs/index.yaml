@@ -1,47 +1,36 @@
 apiVersion: v1
 entries:
-  infinity:
+  hubble:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-17T14:37:09.239654-05:00"
-    description: Volumes for the HFX stack
-    digest: c3bd143146d642050df916bfff1fcf5236fcfdc457605fbcd80915e4b4b07390
-    name: infinity
+    created: "2021-01-22T20:36:27.280106-05:00"
+    description: A Helm chart for Kubernetes
+    digest: 61b86ac0628fb7efbbbf0ba93a85b09ade22387eb2bf390d6d9f4e77fbe9de3c
+    name: hubble
     type: application
     urls:
-    - https://hatfieldfx.github.io/Charts/infinity-0.1.0.tgz
+    - https://hatfieldfx.github.io/Charts/hubble-0.1.0.tgz
+    version: 0.1.0
+  polaris:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-01-22T20:36:27.280353-05:00"
+    description: A Helm chart for Kubernetes
+    digest: e87fc767bc29c7e7648fc0bf9261cc6f95ddc0beea87a00d950c561282d86787
+    name: polaris
+    type: application
+    urls:
+    - https://hatfieldfx.github.io/Charts/polaris-0.1.0.tgz
     version: 0.1.0
   serenity:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-17T14:37:09.239843-05:00"
+    created: "2021-01-22T20:36:27.280517-05:00"
     description: API layer for the HFX stack
-    digest: 074b3be00a1785ec02bcf96d1371102ac55e022e14194e503618ed3328347b35
+    digest: 2d903d7aba73df830c46c3832b0badd1a6704ae6238ff7de87b04c59f5eb4993
     name: serenity
     type: application
     urls:
     - https://hatfieldfx.github.io/Charts/serenity-0.1.0.tgz
     version: 0.1.0
-  tranquility:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-01-17T14:37:09.240184-05:00"
-    description: Web UI for the HFX stack
-    digest: 1c564f736b8264cd4dd8396dc27a04d96d26626b2185b153701f3bb583320d9f
-    name: tranquility
-    type: application
-    urls:
-    - https://hatfieldfx.github.io/Charts/tranquility-0.1.0.tgz
-    version: 0.1.0
-  workstation:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-01-17T14:37:09.240529-05:00"
-    description: Workstation for the HFX stack
-    digest: 3dd457f0efeac158d975dee30f8e82dd01c926d4ea0613f2213626cc1fa99532
-    name: workstation
-    type: application
-    urls:
-    - https://hatfieldfx.github.io/Charts/workstation-0.1.0.tgz
-    version: 0.1.0
-generated: "2021-01-17T14:37:09.238119-05:00"
+generated: "2021-01-22T20:36:27.277187-05:00"
