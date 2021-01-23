@@ -3,9 +3,9 @@ entries:
   hubble:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-22T20:36:27.280106-05:00"
+    created: "2021-01-22T23:39:24.025741-05:00"
     description: A Helm chart for Kubernetes
-    digest: 61b86ac0628fb7efbbbf0ba93a85b09ade22387eb2bf390d6d9f4e77fbe9de3c
+    digest: c36ede75d0d09938c50cab8f2e6bd332b9f396c7e974551952c98b3bbc9acce5
     name: hubble
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   polaris:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-22T20:36:27.280353-05:00"
-    description: A Helm chart for Kubernetes
-    digest: e87fc767bc29c7e7648fc0bf9261cc6f95ddc0beea87a00d950c561282d86787
+    created: "2021-01-22T23:39:24.026106-05:00"
+    description: Polaris workstation deployment
+    digest: df0e8e12b0f9d27b8b052440f5ff8d16a194016ebc9bb7f91bf7eaf773130385
     name: polaris
     type: application
     urls:
@@ -25,12 +25,12 @@ entries:
   serenity:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-01-22T20:36:27.280517-05:00"
+    created: "2021-01-22T23:39:24.026304-05:00"
     description: API layer for the HFX stack
-    digest: 2d903d7aba73df830c46c3832b0badd1a6704ae6238ff7de87b04c59f5eb4993
+    digest: 1ae5910f8802840cff2e4bf90d1b4dd85994d9fe082d72b328bb718da091495f
     name: serenity
     type: application
     urls:
     - https://hatfieldfx.github.io/Charts/serenity-0.1.0.tgz
     version: 0.1.0
-generated: "2021-01-22T20:36:27.277187-05:00"
+generated: "2021-01-22T23:39:24.023565-05:00"
